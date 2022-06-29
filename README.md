@@ -53,6 +53,21 @@ Rust: (par_iter parallelism + SIMD f64x8)
 printf: 309.76286ms
 ```
 
+Fork, with blas ndarray:
+
+```
+Rust: (naive/brute force)
+took: 1.077836212s
+Rust: (SIMD f64x8)
+took: 686.731468ms
+Rust: (par_iter parallelism + SIMD f64x8)
+took: 421.287732ms
+Rust: (ndarray)
+took: 108.83656ms
+Rust: (par_iter parallelism + ndarray)
+took: 113.398612ms
+```
+
 ## Requirements:
  - [Visual Studio 2017](https://docs.microsoft.com/zh-tw/visualstudio/releasenotes/vs2017-relnotes)
  - [Intel C++ compiler](https://software.intel.com/en-us/c-compilers)

@@ -9,7 +9,12 @@ packed_simd_2 = "0.3"
 rayon = "1.5"
 assert_approx_eq = "1.1.0"
 indicatif = {version = "0.16", features = ["rayon"]}
-ndarray = "0.15"
+ndarray = { version = "0.15", features = ["rayon", "blas"] }
+ndarray-npy = "0.8"
+ndarray-rand = "0.14"
+blas-src = { version = "*", default-features = false, features = ["openblas"] }
+# https://github.com/rust-ndarray/ndarray/issues/586
+openblas-src = { version = "0.6.1", default-features = false, features = ["cblas"] }
 
 [[bin]]
 name = "original"
