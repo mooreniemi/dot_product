@@ -30,6 +30,28 @@ This worse performance actually makes more sense because we're not doing
 the overall dot products in parallel, just the operations of each dot
 product in parallel.
 
+This is retained in the `bin` "original". Further changes happened in the
+`bin` "fork". Note that `indicatif` progress bar effects timings, so
+a `verbose` flag is at the top of "fork".
+
+```
+# indicatif on
+Rust: (naive/brute force)
+printf: 18.10648789s seconds
+Rust: (SIMD f64x8)
+printf: 17.184435915s seconds
+Rust: (par_iter parallelism + SIMD f64x8)
+printf: 21.560859663s seconds
+
+# no indicatif on
+Rust: (naive/brute force)
+printf: 1.002513099s seconds
+Rust: (SIMD f64x8)
+printf: 733.738948ms seconds
+Rust: (par_iter parallelism + SIMD f64x8)
+printf: 309.76286ms seconds
+```
+
 ## Requirements:
  - [Visual Studio 2017](https://docs.microsoft.com/zh-tw/visualstudio/releasenotes/vs2017-relnotes)
  - [Intel C++ compiler](https://software.intel.com/en-us/c-compilers)
