@@ -5,6 +5,5 @@ authors = ["Ching-Chuan Chen <zw12356@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-"time" = ""
-"packed_simd" = ""
-"rayon" = ""
+"packed_simd_2" = "0.3"
+"rayon" = "1.5"
