@@ -99,6 +99,7 @@ dependencies = [
  "console",
  "lazy_static",
  "number_prefix",
+ "rayon",
  "regex",
 ]
 

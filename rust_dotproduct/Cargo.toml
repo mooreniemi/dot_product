@@ -8,5 +8,13 @@ edition = "2018"
 packed_simd_2 = "0.3"
 rayon = "1.5"
 assert_approx_eq = "1.1.0"
-indicatif = "0.16"
+indicatif = {version = "0.16", features = ["rayon"]}
 ndarray = "0.15"
+
+[[bin]]
+name = "original"
+path = "src/original.rs"
+
+[[bin]]
+name = "fork"
+path = "src/fork.rs"
