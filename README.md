@@ -68,6 +68,15 @@ Rust: (par_iter parallelism + ndarray)
 took: 113.398612ms
 ```
 
+ndarray WITHOUT blas:
+
+```
+Rust: (ndarray)
+took: 1.120636321s
+Rust: (par_iter parallelism + ndarray)
+took: 453.773839ms
+```
+
 ## Requirements:
  - [Visual Studio 2017](https://docs.microsoft.com/zh-tw/visualstudio/releasenotes/vs2017-relnotes)
  - [Intel C++ compiler](https://software.intel.com/en-us/c-compilers)
