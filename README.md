@@ -1,5 +1,35 @@
 # Test Dot Product in C++, MKL and Rust
 
+Note from Alex:
+
+I've been working on the Rust side in this fork, porting it to current
+library versions.
+
+The original implementation tested one extremely large vector dot product,
+which is not really representative since the horizontal `sum` is only done
+once. In practice, vectors tend to be maybe 32-1024 dim. A more
+representative benchmark then is to run on _many_ vectors of (say)
+dim=256.
+
+For dim=256 and n=1_000_000, the output on my XPS13 was:
+
+```
+Rust: (naive/brute force)
+printf: 254.178934319s seconds
+Rust: (SIMD f64x4)
+printf: 183.175553805s seconds
+Rust: (SIMD f64x8)
+printf: 161.44382163s seconds
+Rust: (parallelism)
+printf: 720.338301011s seconds
+Rust: (parallelism + SIMD)
+printf: 711.990750934s seconds
+```
+
+This worse performance actually makes more sense because we're not doing
+the overall dot products in parallel, just the operations of each dot
+product in parallel.
+
 ## Requirements:
  - [Visual Studio 2017](https://docs.microsoft.com/zh-tw/visualstudio/releasenotes/vs2017-relnotes)
  - [Intel C++ compiler](https://software.intel.com/en-us/c-compilers)
