@@ -1,9 +1,12 @@
 [package]
 name = "rust_dotproduct"
 version = "0.1.0"
-authors = ["Ching-Chuan Chen <zw12356@gmail.com>"]
+authors = ["Ching-Chuan Chen <zw12356@gmail.com>", "Alex Moore-Niemi <moore.niemi@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-"packed_simd_2" = "0.3"
-"rayon" = "1.5"
+packed_simd_2 = "0.3"
+rayon = "1.5"
+assert_approx_eq = "1.1.0"
+indicatif = "0.16"
+ndarray = "0.15"
